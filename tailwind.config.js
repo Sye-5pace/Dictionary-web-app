@@ -30,6 +30,9 @@ export default {
         'lora':["Lora", "serif"],
         'inconsolata':["Inconsolata", "monospace"]
       },
+      boxShadow: {
+        'mediumpurple': '0 35px 35px rgba(164, 69, 237, 0.25)',
+      }
     },
   },
   plugins: [

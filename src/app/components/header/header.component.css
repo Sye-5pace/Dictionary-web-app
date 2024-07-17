@@ -1,0 +1,27 @@
+.drop-shadow-purple {
+  box-shadow: -2px 8px 20px 5px rgba(164, 69, 237, 0.125);
+}
+
+.drop-shadow-normal {
+  box-shadow: -2px 8px 20px 5px rgba(0, 0, 0, 0.125);
+}
+
+#switch-bg{
+  transition: background-color 0.2s ease-in;
+}
+
+.switch{
+  transition: transform  0.2s ease-in;
+}
+
+body{
+  transition: background-color 0.5s ease-in;
+}
+
+.switch-dark{
+  transform:translateX(15px) translateY(0);
+}
+
+.switch-light{
+  transform:translateX(15px) translateY();
+}
