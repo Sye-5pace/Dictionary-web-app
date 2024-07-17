@@ -1,23 +1,34 @@
 
 <header class=" w-[50%] mobile:w-[70%] mx-auto mt-6 flex flex-row items-center justify-between px-2">
-  <svg  class="w-12 h-12 fill-[#d0d1d0]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z">
-    </path><path d="M21 18H6C5.44772 18 5 18.4477 5 19C5 19.5523 5.44772 20 6 20H21V22H6C4.34315 22 3 20.6569 3 19V4C3 2.89543 3.89543 2 5 2H21V18ZM5 16.05C5.16156 16.0172 5.32877 16 5.5 16H19V4H5V16.05ZM16 9H8V7H16V9Z"></path>
-  </svg>
-  <div class="flex flex-row items-center gap-4">
-    <div class="flex flex-row items-center gap-2">
-      <select  name="fonts" id="fonts" class="cursor-pointer text-[1.1rem] font-medium" [(ngModel)]="selectedFont" (change)="onFontChange(selectedFont)">
-        @for(font of fontFamily; track font; let i = $index){
-          <option [value]="font">{{ font }}</option>
-        }
-      </select>
+  <img src="../../../assets/iconoir_book.svg" alt="">
+  <section class="flex flex-row items-center gap-6">
+    <div class="flex flex-row items-center gap-2 border-r-[1.5px]  pr-6 border-[#979797]">
+      <div class="cursor-pointer flex items-center gap-4 font-bold text-[1rem]" (click)="toggleOptionsDisabled()">
+        <p class="font-bold text-[1rem]"> {{ selectedFont }} </p>
+        @if(optionsDisabled){
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 stroke-mediumpurple">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+          </svg>
+        }        
+         @if(!optionsDisabled){
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
+         } 
+      </div>
+      <div  name="fonts" id="fonts" class="absolute rounded-[1rem] gap-4 right-[35%] top-[4rem] w-[11.4375rem] p-6 h-[9.5rem] flex flex-col  bg-[#fff] cursor-pointer text-[1.125rem] font-medium drop-shadow-xl"  [class]="optionsDisabled ? 'flex':'hidden'" [(ngModel)]="selectedFont" >
+        <li  class="cursor-pointer list-none hover:text-mediumpurple"  (click)="onFontChange('Sans Serif')">Sans Serif</li>
+        <li  class="cursor-pointer list-none hover:text-mediumpurple"  (click)="onFontChange('Serif')"> Sans </li>
+        <li  class="cursor-pointer list-none hover:text-mediumpurple"  (click)="onFontChange('Mono')"> Mono</li>
+      </div>
     </div>
-    <div  class="bg-[#757575] rounded-[1.2rem] w-9 h-[1.125rem] flex flex-row items-center p-1 cursor-pointer">
+    <div  class="hover:bg-mediumpurple bg-boulder rounded-[1.2rem] w-9 h-[1.125rem] flex flex-row items-center p-1 cursor-pointer">
       <div  class="bg-[#fffffc] w-3 h-3  rounded-full switch"></div>
     </div>
-    <svg  class="cursor-pointer w-6 h-6 fill-[#d0d1d0]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z">
+    <svg  class="cursor-pointer w-6 h-6 fill-boulder" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z">
       </path><path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z"></path>
     </svg>
-  </div>
+  </section>
 </header>
 
 

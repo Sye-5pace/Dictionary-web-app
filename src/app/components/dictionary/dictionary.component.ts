@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FontService } from '../../services/font.service';
 
 @Component({
   selector: 'app-dictionary',
@@ -9,5 +10,15 @@ import { Component } from '@angular/core';
 })
 
 export class DictionaryComponent {
+  selectedFont$!: string;
+  constructor( private fontService: FontService){}
+
+  ngOnInit(){
+    this.fontService.currentFont$.subscribe( font => {
+      this.selectedFont$ = font;
+    })
+  }
+
+
 
 }

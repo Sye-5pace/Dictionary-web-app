@@ -3,7 +3,23 @@ export default {
   content: [
     "./src/**/*.{html,ts}"
   ],
-  theme: {
+  theme: { 
+    colors:{
+      'boulder':'#757575',
+      // 'pumice':'#d0d1d0',
+      'black-white': '#fffffc',
+      // 'lavender': '#c497e3',
+      'mercury':'#E9E9E9',
+      'mediumpurple':'#A445ED',
+      // 'perfume':'#e9cefb',
+      'wildsand':'#f4f4f4',
+      'mineshaft':'#3A3A3A',
+      'mineshaftpwdlite':'#2D2D2D',
+      'mineshaftpowder':'#1F1F1F',
+      'sunsetorange':'#FF5252',
+      'black':'#050505',
+
+    },
     screens: {
       'mobile': {'min':'200px','max':'427px'},
       'tablet': {'min':'427px','max':'782px'},
@@ -11,9 +27,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        'mono':['Azeret Mono','monospace'],
-        'sans':['Poppins','sans'],
-        'serif':['Trirong','serif']
+        'sans-serif':["Inter", "sans-serif"],
+        'serif':["Lora", "serif"],
+        'mono':["Inconsolata", "monospace"]
       },
     },
   },

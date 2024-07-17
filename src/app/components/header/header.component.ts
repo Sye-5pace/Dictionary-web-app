@@ -13,8 +13,9 @@ import { FormsModule } from '@angular/forms';
 
 
 export class HeaderComponent {
-  selectedFont: string = 'serif'
-  fontFamily: string[] = ['Serif', 'Sans', 'Mono'];
+  selectedFont: string = 'Sans Serif'
+  fontFamily: string[] = ['Sans Serif', 'Sans', 'Mono'];
+  optionsDisabled: boolean = true;
 
   constructor(private fontService: FontService){}
 
@@ -27,4 +28,7 @@ export class HeaderComponent {
     this.selectedFont = font;
   }
 
+  toggleOptionsDisabled(){
+    this.optionsDisabled = !this.optionsDisabled;
+  }
 }
