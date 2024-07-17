@@ -18,7 +18,6 @@ export default {
       'mineshaftpowder':'#1F1F1F',
       'sunsetorange':'#FF5252',
       'black':'#050505',
-
     },
     screens: {
       'mobile': {'min':'200px','max':'427px'},
@@ -27,9 +26,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        'sans-serif':["Inter", "sans-serif"],
-        'serif':["Lora", "serif"],
-        'mono':["Inconsolata", "monospace"]
+        'inter':["Inter", "sans-serif"],
+        'lora':["Lora", "serif"],
+        'inconsolata':["Inconsolata", "monospace"]
       },
     },
   },

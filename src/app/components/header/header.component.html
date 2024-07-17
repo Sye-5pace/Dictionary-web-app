@@ -16,9 +16,9 @@
           </svg>
          } 
       </div>
-      <div  name="fonts" id="fonts" class="absolute rounded-[1rem] gap-4 right-[35%] top-[4rem] w-[11.4375rem] p-6 h-[9.5rem] flex flex-col  bg-[#fff] cursor-pointer text-[1.125rem] font-medium drop-shadow-xl"  [class]="optionsDisabled ? 'flex':'hidden'" [(ngModel)]="selectedFont" >
+      <div  class="absolute rounded-[1rem] gap-4 right-[35%] top-[4rem] w-[11.4375rem] p-6 h-[9.5rem] flex flex-col  bg-[#fff] cursor-pointer text-[1.125rem] font-medium drop-shadow-xl"  [class]="optionsDisabled ? 'flex':'hidden'"  >
         <li  class="cursor-pointer list-none hover:text-mediumpurple"  (click)="onFontChange('Sans Serif')">Sans Serif</li>
-        <li  class="cursor-pointer list-none hover:text-mediumpurple"  (click)="onFontChange('Serif')"> Sans </li>
+        <li  class="cursor-pointer list-none hover:text-mediumpurple"  (click)="onFontChange('Serif')"> Serif </li>
         <li  class="cursor-pointer list-none hover:text-mediumpurple"  (click)="onFontChange('Mono')"> Mono</li>
       </div>
     </div>

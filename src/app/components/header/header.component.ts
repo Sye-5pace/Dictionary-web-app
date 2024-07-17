@@ -1,3 +1,4 @@
+// import { selectCompedTodos } from './../../../../../Todo-app/src/app/store/todo/todo.selectors';
 import { Component,  } from '@angular/core';
 import { FontService } from '../../services/font.service';
 import { FormsModule } from '@angular/forms';
@@ -14,8 +15,7 @@ import { FormsModule } from '@angular/forms';
 
 export class HeaderComponent {
   selectedFont: string = 'Sans Serif'
-  fontFamily: string[] = ['Sans Serif', 'Sans', 'Mono'];
-  optionsDisabled: boolean = true;
+  optionsDisabled: boolean = false;
 
   constructor(private fontService: FontService){}
 

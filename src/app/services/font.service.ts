@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs'
 
-
 @Injectable({
   providedIn: 'root'
 })
+
 
 export class FontService {
   private selectedFont = new BehaviorSubject<string>('Sans Serif');
@@ -12,6 +12,5 @@ export class FontService {
 
   changeFont(font: string) {
     this.selectedFont.next(font);
-    console.log('current font changed:' + this.currentFont$)
   }
 }
