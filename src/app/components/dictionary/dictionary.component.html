@@ -1,14 +1,26 @@
 <main  class=" w-[47%] mobile:w-[70%] mx-auto flex flex-col gap-y-8" >
   <section class="w-full rounded-[1rem] bg-[#CDCDCD] cursor-pointer h-[4rem] mobile:h-[6rem] tablet:h-[6rem]  flex flex-row items-center px-4 justify-between hover:border-[#a245ec] hover:border-[1px]"  [class]=" empty ? 'border-sunsetorange border-[1px] ':''">
-    <input   class=" text-mineshaftpwdlite pl-4 focus:outline-none  bg-[#CDCDCD]  font-bold text-[1.125rem] w-full rounded-[1rem]" [(ngModel)]="word" placeholder="Search any word..."/>
+    <input   class=" text-mineshaftpwdlite pl-4 focus:outline-none  bg-[#CDCDCD]  font-bold text-[1.125rem] w-full rounded-[1rem]" [(ngModel)]="word" placeholder="Search any word..."(keydown.enter)="searchWord()"/>
     <svg  class="w-6 h-6 stroke-mediumpurple cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" (click)="searchWord()">
       <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
     </svg>
   </section>
   @if(empty){
     <p class="text-left -mt-7 text-[1.25rem] text-sunsetorange">Whoops can't be empty</p>
-  }
-  @if(!empty){
+  } @else if(notFound){
+    <div class="w-full mt-[8.25rem] flex flex-col justify-center items-center gap-[2.5rem]">
+      <img src="../../../assets/😕.png" alt="">
+      <div class="flex flex-col gap-3">
+        <h3 class="font-bold text-[1.25rem] text-center">{{ errorMessage['title'] }}</h3>
+        <div class="text-[1.25rem]  text-center">
+          <p>
+            {{ errorMessage['message'] }}
+            <span>{{ errorMessage['resolution']}}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  } @else {
     <section   class="flex flex-row items-center justify-between px-3">
       <div  class="flex flex-col py-2 ">
         <h1 class="font-bold text-[2rem]"></h1>
@@ -58,5 +70,4 @@
       </div>
     </section>
   }
-  
 </main>
