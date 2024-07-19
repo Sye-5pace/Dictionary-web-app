@@ -2,7 +2,7 @@
   <img src="../../../assets/iconoir_book.svg" alt="" class="mobile:w-[2rem] mobile:h-[1.75rem] tablet:w-[2rem] tablet:h-[2.25rem]">
   <section class="flex flex-row items-center gap-6">
     <div class="flex flex-row items-center gap-2 border-r-[1.5px]  pr-6 border-[#979797]">
-      <div class="cursor-pointer flex items-center gap-4 font-bold text-[1rem]" (click)="toggleOptionsDisabled()">
+      <div class="cursor-pointer flex items-center gap-4 font-bold text-[1rem]" title="change fonts" (click)="toggleOptionsDisabled()">
         <p class="font-bold text-[1rem]"> {{ selectedFont }} </p>
         @if(optionsDisabled){
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 stroke-mediumpurple">
@@ -15,13 +15,13 @@
         </svg>
         }
       </div>
-      <div  class="absolute rounded-[1rem] gap-4 right-[35%] top-[4rem] w-[11.4375rem] p-6 h-[9.5rem] flex flex-col  bg-[#fff] cursor-pointer text-[1.125rem] font-medium" [class]="{'bg-black':darkmode, 'drop-shadow-purple': darkmode,'drop-shadow-normal': !darkmode , 'flex':optionsDisabled, 'hidden':!optionsDisabled}" >
+      <div  class="absolute rounded-[1rem] gap-4 right-[35%] top-[4rem] w-[11.4375rem] p-6 h-[9.5rem] flex flex-col  bg-[#fff] cursor-pointer text-[1.125rem] font-medium bg-opacity-15" [class]="{'bg-black':darkmode, 'drop-shadow-purple': darkmode,'drop-shadow-normal': !darkmode , 'flex':optionsDisabled, 'hidden':!optionsDisabled}" >
         <li  class="cursor-pointer list-none hover:text-mediumpurple font-inter"  (click)="onFontChange('Sans Serif')">Sans Serif</li>
         <li  class="cursor-pointer list-none hover:text-mediumpurple font-lora"  (click)="onFontChange('Serif')"> Serif </li>
         <li  class="cursor-pointer list-none hover:text-mediumpurple font-inconsolata"  (click)="onFontChange('Mono')"> Mono</li>
       </div>
     </div>
-    <div id="switch-bg"  class="hover:bg-mediumpurple bg-boulder rounded-[1.2rem] w-9 h-[1.125rem] flex flex-row items-center p-1 cursor-pointer" [class]="darkmode ? 'bg-mediumpurple':'bg-boulder'" (click)="toggleTheme()">
+    <div id="switch-bg" title="change theme"  class="hover:bg-mediumpurple bg-boulder rounded-[1.2rem] w-9 h-[1.125rem] flex flex-row items-center p-1 cursor-pointer" [class]="darkmode ? 'bg-mediumpurple':'bg-boulder'" (click)="toggleTheme()">
       <div   class="bg-[#fffffc] w-3 h-3  rounded-full switch" [class]="darkmode ? 'switch-dark':'switch-light'"></div>
     </div>
     <svg  class="cursor-pointer w-6 h-6 fill-boulder" [class]="darkmode ? 'fill-mediumpurple':'fill-boulder'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z">
