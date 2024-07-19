@@ -15,7 +15,7 @@
         </svg>
         }
       </div>
-      <div  class="absolute rounded-[1rem] gap-4 right-[35%] top-[4rem] w-[11.4375rem] p-6 h-[9.5rem] flex flex-col  bg-[#fff] cursor-pointer text-[1.125rem] font-medium bg-opacity-15" [class]="{'bg-black':darkmode, 'drop-shadow-purple': darkmode,'drop-shadow-normal': !darkmode , 'flex':optionsDisabled, 'hidden':!optionsDisabled}" >
+      <div  class="absolute rounded-[1rem] gap-4 right-[35%] top-[4rem] w-[11.4375rem] p-6 h-[9.5rem] flex flex-col  bg-[#fff] cursor-pointer text-[1.125rem] font-medium " [class]="{'bg-black':darkmode, 'drop-shadow-purple': darkmode,'drop-shadow-normal': !darkmode , 'flex':optionsDisabled, 'hidden':!optionsDisabled}" >
         <li  class="cursor-pointer list-none hover:text-mediumpurple font-inter"  (click)="onFontChange('Sans Serif')">Sans Serif</li>
         <li  class="cursor-pointer list-none hover:text-mediumpurple font-lora"  (click)="onFontChange('Serif')"> Serif </li>
         <li  class="cursor-pointer list-none hover:text-mediumpurple font-inconsolata"  (click)="onFontChange('Mono')"> Mono</li>
