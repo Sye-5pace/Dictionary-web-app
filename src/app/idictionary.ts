@@ -1,29 +1,26 @@
-export interface Idictionary{
-    word: string;
-    phonetic: string;
-    phonetics: Phonetic[];
-    sourceUrls: string[]
-    origin: string;
-    meanings: Meaning[];
+export interface Idictionary {
+  word: string;
+  phonetic?: string;
+  phonetics?: IPhonetics[];
+  meanings: IMeaning[];
+  sourceUrls: string[];
 }
 
-interface Phonetic {
-    text: string;
-    audio?: string;
+interface IMeaning {
+  partOfSpeech: string;
+  definitions: IDefinition[];
+  synonyms?: string[];
 }
 
-interface Meaning {
-    partOfSpeech: string;
-    definitions: Definitions[]
+interface IDefinition {
+  definition: string;
+  example?: string;
 }
 
-interface Definitions {
-    definition: string;
-    example: string;
-    synonyms: string[];
-    antonyms: string[];
+interface IPhonetics {
+  text: string;
+  [key: string]: string | undefined;
 }
-
 export interface IErrorMessage {
-  [index: string]: string;
+  [index: string]: string
 }

@@ -1,5 +1,4 @@
-
-<header class=" w-[47%] mobile:w-[70%] mx-auto mt-6 flex flex-row items-center justify-between px-2 " [class]="darkmode ? 'text-[#fff]' : '' ">
+<header class="h-[2.28125rem] w-[47%] mobile:w-[70%] mx-auto mt-6 flex flex-row items-center justify-between px-2  " [class]="darkmode ? 'text-[#fff]' : '' ">
   <img src="../../../assets/iconoir_book.svg" alt="">
   <section class="flex flex-row items-center gap-6">
     <div class="flex flex-row items-center gap-2 border-r-[1.5px]  pr-6 border-[#979797]">
@@ -9,12 +8,12 @@
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 stroke-mediumpurple">
             <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
           </svg>
-        }        
-         @if(!optionsDisabled){
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-          </svg>
-         } 
+        }
+        @if(!optionsDisabled){
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+        }
       </div>
       <div  class="absolute rounded-[1rem] gap-4 right-[35%] top-[4rem] w-[11.4375rem] p-6 h-[9.5rem] flex flex-col  bg-[#fff] cursor-pointer text-[1.125rem] font-medium" [class]="{'bg-black':darkmode, 'drop-shadow-purple': darkmode,'drop-shadow-normal': !darkmode , 'flex':optionsDisabled, 'hidden':!optionsDisabled}" >
         <li  class="cursor-pointer list-none hover:text-mediumpurple font-inter"  (click)="onFontChange('Sans Serif')">Sans Serif</li>
