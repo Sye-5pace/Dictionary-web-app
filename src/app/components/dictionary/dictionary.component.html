@@ -1,5 +1,5 @@
-<main  class="h-full  w-[47%] mobile:w-[70%] mx-auto flex flex-col gap-y-[1.375rem]" >
-  <section class="w-full rounded-[1rem] bg-[#CDCDCD] cursor-pointer h-[3.75rem] mobile:h-[4rem] tablet:h-[4rem]  flex flex-row items-center px-4 justify-between hover:border-[#a245ec] hover:border-[1px]"  [class]=" empty ? 'border-sunsetorange border-[1px] ':''">
+<main  class="h-full tablet:w-[90%]  w-[47%] mobile:w-[90%] mx-auto flex flex-col gap-y-[1.375rem]" >
+  <section class="w-full rounded-[1rem] bg-[#CDCDCD] cursor-pointer h-[3.75rem]  flex flex-row items-center px-4 justify-between hover:border-[#a245ec] hover:border-[1px]"  [class]=" empty ? 'border-sunsetorange border-[1px] ':''">
     <input   class=" text-mineshaftpwdlite pl-4 focus:outline-none  bg-[#CDCDCD]  font-bold text-[1.125rem] w-full rounded-[1rem]" [(ngModel)]="word" placeholder="Search any word..."(keydown.enter)="searchWord()"/>
     <svg  class="w-6 h-6 stroke-mediumpurple cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" (click)="searchWord()">
       <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
@@ -44,29 +44,35 @@
             <div class="bg-mercury w-[86%] h-[0.02rem]"></div>
           </div>
           <p class="text-boulder font-thin italic  text-[1.2rem]">Meaning </p>
-          <ul class=" flex flex-col gap-[0.8125rem] text-[1.125rem] ">
+          <ul class=" flex flex-col gap-[0.8125rem] text-[1.125rem]  marker:text-[#c497e3] list-disc">
             @for( defi of meaning.definitions; track defi;){
-              <li id="meaning-item"  class="pl-4 marker:text-mediumpurple flex flex-col gap-2">
-                {{ defi.definition }}
+              <li   class="pl-4 list-disc">
+                <p>{{ defi.definition }}</p>
+                <p class="pl-4 text-[1.125rem] text-boulder  font-thin">"{{ defi.example || 'example not found' }}"</p>
               </li>
-              <p class="pl-4 text-[1.125rem] text-boulder  font-thin">{{ defi.example }}</p>
             }
           </ul>
-          <div class="flex gap-[0.031] flex-wrap items-center">
-            Synonyms:
-            @for(synonym of meaning.synonyms; track $index){
-              <div class="flex flex-wrap gap-[0.02px] pl-2">
-                <div  class="text-mediumpurple font-bold  cursor-pointer flex-wrap" title="search" (click)="searchWord($event)">
-                  {{ synonym || 'no synonyms found' }}
+          <div class="flex gap-2 items-center">
+            Synonym(s):
+            <div class="flex flex-wrap ">
+              @for(synonym of meaning.synonyms; track $index;){
+                <div class="flex flex-wrap gap-[0.01px] pl-3">
+                  <div  class="text-mediumpurple font-bold  cursor-pointer flex-wrap" title="search" (click)="searchWord($event)">
+                    {{ synonym }}
+                  </div>
                 </div>
-              </div>
-             }
+              }
+              @empty(){
+                <p class="text-mediumpurple text-[1rem] font-normal italic ">...No synonyms found</p>
+              }
+            </div>
           </div>
+
         }
         <div class="w-full h-[0.04rem] bg-mercury"></div>
         <div class="flex flex-row gap-2">
           <p class="text-[0.875rem]">Source: </p>
-          <a target="_blank"  class="cursor-pointer text-[0.875rem] flex items-center gap-2">{{ searchResult?.sourceUrls }}
+          <a target="_blank" [href]="searchResult?.sourceUrls"  class="underline cursor-pointer text-[0.875rem] flex items-center gap-2">{{ searchResult?.sourceUrls }}
             <img src="../../../assets/tabler_external-link.png" alt="">
           </a>
         </div>

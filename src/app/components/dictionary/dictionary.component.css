@@ -1,7 +1,26 @@
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
+
+ul li::before {
+  content: '•';
+  color: #A445ED;
+  position: absolute;
+  left: 0;
+  font-size: 20px;
+  line-height: 1;
+}
+
 
 .scrollable {
   overflow-y: scroll;
-
 }
 
 .scrollable::-webkit-scrollbar {
