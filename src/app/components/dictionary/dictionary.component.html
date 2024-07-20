@@ -70,11 +70,11 @@
 
         }
         <div class="w-full h-[0.04rem] bg-mercury"></div>
-        <div class="flex flex-row gap-2">
+        <div class="flex flex-row gap-2 items-center">
           <p class="text-[0.875rem]">Source: </p>
-          <a target="_blank" [href]="searchResult?.sourceUrls"  class="underline cursor-pointer text-[0.875rem] flex items-center gap-2">{{ searchResult?.sourceUrls }}
-            <img src="../../../assets/tabler_external-link.png" alt="">
+          <a target="_blank" [href]="searchResult?.sourceUrls"  class="link-effect cursor-pointer text-[0.875rem] flex items-center gap-2">{{ searchResult?.sourceUrls }}
           </a>
+          <img src="../../../assets/tabler_external-link.png" alt="" class="size-[0.875rem]">
         </div>
       </section>
     </div>
