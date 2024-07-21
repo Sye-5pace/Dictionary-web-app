@@ -18,13 +18,15 @@ export class ThemeService {
     this.setThemeStorage(newTheme);
   }
 
+
   private setThemeStorage(theme: boolean) {
-    localStorage.setItem('theme', theme.toString());
+    localStorage.setItem(this.themeKey, theme.toString());
+    console.log(theme)
   }
 
   private readThemeStorage() {
     const themeString = localStorage.getItem(this.themeKey);
-    return themeString === 'true' ? true : false;
+    return themeString  ? false:  Boolean(themeString);
   }
 }
 
