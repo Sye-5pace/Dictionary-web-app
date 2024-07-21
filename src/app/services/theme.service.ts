@@ -25,7 +25,6 @@ export class ThemeService {
   private readThemeStorage() {
     const themeString = localStorage.getItem(this.themeKey);
     return themeString === 'true' ? true : false;
-
   }
 }
 

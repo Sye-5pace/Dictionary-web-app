@@ -3,6 +3,7 @@ import { FontService } from '../../services/font.service';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Idictionary, IErrorMessage } from '../../idictionary';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-dictionary',
@@ -26,12 +27,14 @@ export class DictionaryComponent {
   wordAudio: string ='';
 
 
-  constructor( private fontService: FontService, private http: HttpClient){}
+  constructor( private fontService: FontService, private http: HttpClient, private themeService: ThemeService){}
 
   ngOnInit(){
     this.fontService.currentFont$.subscribe( font => {
       this.selectedFont$ = font;
     })
+
+    this.themeService.currentTheme$.subscribe( theme => this.darkmode = theme )
   }
 
   searchWord(event?: any){
